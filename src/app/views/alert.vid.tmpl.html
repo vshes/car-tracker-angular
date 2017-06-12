@@ -1,0 +1,17 @@
+<table class="table table-striped ">
+    <thead>
+    <tr>
+        <th>Vin</th>
+        <th>TimeStamp</th>
+        <th>Priority</th>
+        <th>Message</th>
+    </tr>
+    </thead>
+    <tr ng-repeat="alert in alertVidVm.alerts">
+        <td>{{alert.vin}}</a></td>
+        <td>{{alert.timestamp}}</td>
+        <td>{{alert.priority}}</td>
+        <td>{{alert.alertmsg}}</td>
+    </tr>
+</table>
+
