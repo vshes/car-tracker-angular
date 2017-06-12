@@ -21,11 +21,12 @@
     "jquery": "^3.2.1",
     "angular-route": "^1.6.4",
     "angular-messages": "^1.6.4",
-    "angular-bootstrap": "^2.5.0"
+    "angular-bootstrap": "^2.5.0",
+    "ngmap": "^1.18.4"
   },
-  "overrides":{
-    "bootstrap":{
-      "main":[
+  "overrides": {
+    "bootstrap": {
+      "main": [
         "dist/css/bootstrap.css",
         "dist/fonts/glyphicons-halflings-regular.eot",
         "dist/fonts/glyphicons-halflings-regular.svg",
@@ -33,10 +34,9 @@
         "dist/fonts/glyphicons-halflings-regular.woff",
         "dist/fonts/glyphicons-halflings-regular.woff2"
       ]
-
     },
-    "jquery":{
-      "main":[]
+    "jquery": {
+      "main": []
     }
   }
 }

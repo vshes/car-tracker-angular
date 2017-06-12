@@ -8,26 +8,33 @@
     <!--endinject-->
 
     <!--inject:css -->
+    <link rel="stylesheet" href="styles/alert.css">
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/footer.css">
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/home.css">
+    <link rel="stylesheet" href="styles/readings.css">
+    <link rel="stylesheet" href="styles/vehicle.css">
     <!--endinject-->
     <title>Demo</title>
 </head>
 <body ng-app="app" class="container" >
-<header id="header"></header>
 
+<header class="container">
+    <table><tr><td><img src="images/angred.png" class="img-circle img-responsive" width="100px" height="80px"></td>
+    <td></td><td><h3 align="center">&nbsp;&nbsp;Welcome to Autotracker</h3></td><td align="left"></td></tr></table>
 
-<h3 align="center"> Welcome to Autotracker</h3>
+</header>
+<br>
+
 <ul class="nav nav-pills  navbar-inverse">
-    <li class="nav-item bg-success">
+    <li class="nav-item bg-danger">
         <a class="nav-link" href="#!home">Home</a>
     </li>
-    <li class="nav-item bg-success">
+    <li class="nav-item bg-danger">
         <a class="nav-link active" href="#!vehicles">Vehicle</a>
     </li>
-    <li class="nav-item bg-success">
+    <li class="nav-item bg-danger">
         <a class="nav-link" href="#!alerts">Alerts</a>
     </li>
 </ul>
@@ -39,20 +46,31 @@
 <script src="../bower_components/angular-route/angular-route.js"></script>
 <script src="../bower_components/angular-messages/angular-messages.js"></script>
 <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../bower_components/ngmap/build/scripts/ng-map.js"></script>
 <!--endinject-->
 
 <!--inject:js -->
 
 <script src="app/app.js"></script>
-<script src="app/app.constant.js"></script>
-<script src="app/controller/vehicle.detail.controller.js"></script>
-<script src="app/controller/alert.controller.js"></script>
-<script src="app/controller/readings.controller.js"></script>
-<script src="app/controller/vehicle.controller.js"></script>
-<script src="app/controller/alert.controller.byVid.js"></script>
-<script src="app/services/alert.service.js"></script>
-<script src="app/services/reading.service.js"></script>
+
 <script src="app/services/vehicle.service.js"></script>
+
+<script src="app/services/reading.service.js"></script>
+
+<script src="app/services/alert.service.js"></script>
+
+<script src="app/controller/vehicle.detail.controller.js"></script>
+
+<script src="app/controller/vehicle.controller.js"></script>
+
+<script src="app/controller/readings.controller.js"></script>
+
+<script src="app/controller/alert.controller.js"></script>
+
+<script src="app/controller/alert.controller.byVid.js"></script>
+
+<script src="app/app.constant.js"></script>
+
 <!--endinject-->
 <section id="section">
     <div ng-view> </div>

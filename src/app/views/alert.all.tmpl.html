@@ -1,6 +1,7 @@
+<br>
+<input ng-model="alertSearch"  class="form-control" placeholder="Search Alert details..."></lebel>
 
-
-<table class="table table-striped ">
+<table class="table table-bordered ">
     <thead>
     <tr>
         <th>vin</th>
@@ -9,10 +10,10 @@
         <th>Message</th>
     </tr>
     </thead>
-    <tr ng-repeat="alert in alertVm.alerts">
+    <tr ng-repeat="alert in alertVm.alerts | filter:alertSearch" ng-class="{'HIGH': 'bg-danger' ,'LOW':'bg-success','MEDIUM':'bg-warning'}[alert.priority]">
         <td>{{alert.vin}}</a></td>
-        <td>{{alert.timestamp}}</td>
-        <td>{{alert.priority}}</td>
+        <td>{{alert.timestamp |date:"MM/dd/yyyy 'at' h:mma"}}</td>
+        <td >{{alert.priority}}</td>
         <td>{{alert.alertmsg}}</td>
     </tr>
 </table>
