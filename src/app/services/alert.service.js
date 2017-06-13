@@ -77,7 +77,7 @@
         function getAlertsByVin(id) {
             console.log("**** HITTING URL ***" + CONFIG.API_ALERT + id);
             return $http.get(CONFIG.API_ALERT + id)
-                .then(successAidFn, errorFn);
+                .then(successFn, errorFn);
         }
 
         function successFn(response) {

@@ -9,7 +9,7 @@ var config ={
     paths:{
         src: "./src",
         build:'./build',
-        bower:'../bower_components'
+        bower:'./bower_components'
     }
 };
 
