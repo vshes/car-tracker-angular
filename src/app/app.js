@@ -1,5 +1,5 @@
 (function(){
-    angular.module('app',['ngRoute']);
+    angular.module('app',['ngRoute','ngMap']);
     console.log("Starting App !")
 
     angular.module('app')
@@ -24,6 +24,11 @@
                 templateUrl:'./app/views/alert.all.tmpl.html',
                 controller:'alertController',
                 controllerAs:'alertVm'
+            })
+            .when('/alerts/map/:id',{
+                templateUrl:'./app/views/alert.map.tmpl.html',
+                controller:'alertMapController',
+                controllerAs:'alertMapVm'
             })
             .when('/alerts/:id',{
                 templateUrl:'./app/views/alert.vid.tmpl.html',
