@@ -8,14 +8,20 @@
     function alertVidControllerFn(alertService,$routeParams) {
 
         var alertVidVm = this;
+        alertVidVm.getMaps = getAllLocations;
 
         alertService.getById($routeParams.id)
             .then(function(alerts){
-                console.log("DETAILED REPORT Of Alerts");
                 alertVidVm.alerts = alerts;
                 console.log(alerts);
             },function(error){
                 console.log(error);
             });
         }
+
+        function getAllLocations() {
+            return alertVidVm.alerts;
+        }
+
+
 })();

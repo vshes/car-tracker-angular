@@ -9,6 +9,7 @@
         <th>Red Line RPM</th>
         <th>Max Fuel Volume</th>
         <th>Last Service Date</th>
+        <th>Usage Stats</th>
     </tr>
     </thead>
     <tr ng-model="vehicleDetVm.vehicle">
@@ -19,6 +20,13 @@
         <td>{{vehicleDetVm.vehicle.redlineRpm}}</td>
         <td>{{vehicleDetVm.vehicle.maxFuelVolume}}</td>
         <td>{{vehicleDetVm.vehicle.lastServiceDate}}</td>
+        <td>
+            <button class="btn btn-default"><a class="text-danger" ng-href="#!/vehicle/alert/{{vehicleDetVm.vehicle.vin}}">statistics</a>
+
+            </button>
+        </td>
     </tr>
+
 </table>
+
 

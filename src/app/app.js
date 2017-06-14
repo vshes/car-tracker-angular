@@ -20,6 +20,11 @@
                 controller:'vehicleDetailController',
                 controllerAs:'vehicleDetVm'
             })
+            .when('/vehicle/alert/:id',{
+                templateUrl:'./app/views/vehicle.attributes.tmpl.html',
+                controller:'vehicleAttributesController',
+                controllerAs:'vehicleAttVm'
+            })
             .when('/alerts',{
                 templateUrl:'./app/views/alert.all.tmpl.html',
                 controller:'alertController',

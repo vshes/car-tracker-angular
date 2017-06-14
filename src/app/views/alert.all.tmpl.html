@@ -1,6 +1,30 @@
 <br>
-<input ng-model="alertSearch"  class="form-control" placeholder="Search Alert details..."></lebel>
-
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+         <span >
+              <!--<button class="btn btn-success" type="button" ng-click="alertVm.getCount()">High Alert Count</button> -->
+             <label class="text-info"> SELECT HIGH ALERTS DURATION: </label>
+               <select ng-options="option for option in alertVm.timeOptions"
+                       ng-model="alertVm.selectedItem"
+                       ng-change="alertVm.getCount()">
+             </select>
+             <h3 class="text-danger animate-show-hide" ng-show="alertVm.selectedItem">
+               Total High Alert from past {{alertVm.selectedItem}} hours is  : {{alertVm.alertCount}}
+             </h3>
+          </span>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search for..." ng-model="alertSearch">
+            <span class="input-group-btn">
+                <button class="btn btn-inverse" type="button">Search!</button>
+            </span>
+        </div>
+    </div>
+</div>
+<br>
 <table class="table table-bordered ">
     <thead>
     <tr>
