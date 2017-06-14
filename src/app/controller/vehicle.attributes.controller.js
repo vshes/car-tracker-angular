@@ -3,19 +3,29 @@
     angular.module('app')
         .controller('vehicleAttributesController',vehicleAttributesControllerFn);
 
-    vehicleAttributesControllerFn.$inject = ['alertService','mapService','$routeParams'];
+    vehicleAttributesControllerFn.$inject = ['alertService','mapService','readingService','$routeParams'];
 
-    function vehicleAttributesControllerFn(alertService,mapService,$routeParams) {
+    function vehicleAttributesControllerFn(alertService,mapService,readingService,$routeParams) {
         var vehicleAttVm = this;
         var alertHandle = alertService.getById($routeParams.id);
         var mapHandle =  mapService.getMap();
+        var readingHandle = readingService.getById($routeParams.id);
 
         vehicleAttVm.toggleMap = showHideMap;
+        vehicleAttVm.toggleReading =showHideReading;
         vehicleAttVm.mapFlag = true;
+        vehicleAttVm.readingFlag = false;
 
-       mapHandle.then(function () {
+
+        mapHandle.then(function () {
            console.log("map created!");
        });
+
+        readingHandle.then(function (readings) {
+            vehicleAttVm.readings = readings;
+            console.log("Reading REcieved **********!!!!"+readings);
+
+        });
 
        alertHandle.then(function(alerts){
            vehicleAttVm.alerts = alerts;
@@ -26,6 +36,7 @@
                positions.push([vehicleAttVm.alerts[i].latitude,vehicleAttVm.alerts[i].longitude]);
                latSum +=  vehicleAttVm.alerts[i].latitude;
                longSum +=  vehicleAttVm.alerts[i].longitude;
+               vehicleAttVm.vin = vehicleAttVm.alerts[i].vin;
 
            }
            console.log(latSum +"\t"+ longSum);
@@ -41,6 +52,10 @@
         function showHideMap() {
             vehicleAttVm.mapFlag = ! vehicleAttVm.mapFlag;
             
+        }
+        function showHideReading() {
+            vehicleAttVm.readingFlag = ! vehicleAttVm.readingFlag;
+
         }
     }
 })();
