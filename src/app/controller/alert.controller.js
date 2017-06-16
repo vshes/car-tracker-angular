@@ -31,7 +31,6 @@
             for (var i = 0; i < alertVm.alerts.length; i++) {
                 var timestamp = alertVm.alerts[i].timestamp;
                 var alertType = alertVm.alerts[i].priority;
-
                 if((timestamp >= startTime) && (timestamp <= endTime) && (alertType == "HIGH")){
                     count += 1;
                 }
